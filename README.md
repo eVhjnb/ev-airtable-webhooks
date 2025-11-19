@@ -27,8 +27,6 @@ ev-airtable-webhooks/
   README.md
 
 ---
-
-```markdown
 ## Arquitectura – Airtable → Webhook → DWH → KPI Factory
 
 Este repositorio forma parte de un ecosistema mayor de automatización de datos y procesos.
