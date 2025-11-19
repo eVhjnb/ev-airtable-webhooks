@@ -50,19 +50,11 @@ Flujo general:
 
 ---
 
-## Integración con otros repos
+## Crosslink con la fábrica de KPIs
 
-Este webhook forma parte del ecosistema de automatización de eV.
-
-Los datos recibidos aquí se almacenan en el Data Warehouse y posteriormente son utilizados por la fábrica de KPIs:
+Los datos procesados y guardados por este webhook alimentan directamente el Data Warehouse utilizado por:
 
 **ev-kpi-factory**  
+Sistema de cálculo y publicación de KPIs semanales.  
 https://github.com/eVhjnb/ev-kpi-factory
-
-Allí se calculan:
-- KPIs semanales,
-- scorecards operativos,
-- y se publican resultados en Google Sheets de forma automatizada.
-
-Este repo (webhooks) es la *entrada* del sistema; el repo `ev-kpi-factory` es la parte de *explotación analítica*.
 
