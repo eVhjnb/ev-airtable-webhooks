@@ -47,4 +47,22 @@ Flujo general:
      |  (KPIs y scorecards – ver repo ev-kpi-factory)
      v
 [Scorecards semanales / Google Sheets / BI]
-  
+
+---
+
+## Integración con otros repos
+
+Este webhook forma parte del ecosistema de automatización de eV.
+
+Los datos recibidos aquí se almacenan en el Data Warehouse y posteriormente son utilizados por la fábrica de KPIs:
+
+**ev-kpi-factory**  
+https://github.com/eVhjnb/ev-kpi-factory
+
+Allí se calculan:
+- KPIs semanales,
+- scorecards operativos,
+- y se publican resultados en Google Sheets de forma automatizada.
+
+Este repo (webhooks) es la *entrada* del sistema; el repo `ev-kpi-factory` es la parte de *explotación analítica*.
+
