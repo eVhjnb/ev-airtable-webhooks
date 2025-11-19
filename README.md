@@ -25,3 +25,28 @@ ev-airtable-webhooks/
   webhooks/
     webhook_offboarding_example.py
   README.md
+
+---
+
+```markdown
+## Arquitectura – Airtable → Webhook → DWH → KPI Factory
+
+Este repositorio forma parte de un ecosistema mayor de automatización de datos y procesos.
+
+Flujo general:
+
+```text
+[Airtable Form]
+     |
+     |  (Airtable Automation + Script JS)
+     v
+[Webhook HTTP / Flask + Gunicorn + systemd]
+     |
+     |  (INSERT en PostgreSQL / DWH)
+     v
+[Data Warehouse]
+     |
+     |  (KPIs y scorecards – ver repo ev-kpi-factory)
+     v
+[Scorecards semanales / Google Sheets / BI]
+  
