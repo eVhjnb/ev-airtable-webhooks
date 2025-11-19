@@ -1,0 +1,29 @@
+# ops/webhook_gunicorn.service
+
+[Unit]
+Description=eV Airtable Webhook (Gunicorn)
+After=network.target
+
+[Service]
+# ajusta el usuario/grupo con el que corre tu app
+User=www-data
+Group=www-data
+
+# Carpeta donde vive el repo
+WorkingDirectory=/opt/ev-airtable-webhooks
+
+# Archivo con variables de entorno (DB_HOST, WEBHOOK_SECRET, etc.)
+EnvironmentFile=/etc/ev-webhook.env
+
+# Ruta al gunicorn dentro del entorno virtual (venv)
+# ajusta la ruta a tu venv real
+ExecStart=/opt/venvs/ev-webhook/bin/gunicorn \
+    --workers 3 \
+    --bind unix:/run/ev-webhook.sock \
+    webhooks.webhook_offboarding_example:app
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
